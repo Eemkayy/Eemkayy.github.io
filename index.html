@@ -1,89 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    </head>
-
-    <!--Unicons-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-
-
-    <!--CSS-->
-    <link rel="stylesheet" href="assets/css/styles.css">
-
-
-    <!--body-->
-    <body>
-        <header class="header" id="header">header boop beep
-            <nav class="nav container">
-                <a href="#" class="nav__logo">Max</a>
-                <div class="div nav__menu" id="nav-menu">
-                    <ul class="nav__list grid">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link">
-                                <i class="uil uil-house-user"></i>Home
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#about" class="nav__link">
-                                <i class="uil uil-user-circle"></i>About
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#skills" class="nav__link">
-                                <i class="uil uil-lightbulb-alt"></i>Skills
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#lookingfor" class="nav__link">
-                                <i class="uil uil-comment-question"></i>Looking For
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#portofolio" class="nav__link">
-                                <i class="uil uil-image-v"></i>Portofolio
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#contact" class="nav__link">
-                                <i class="uil uil-fast-mail"></i>Contact Me
-                            </a>
-                        </li>
-                    </ul>
-                    <i class="uil uil-times-circle nav__close" id="nav-close"></i>
-                </div>
-
-                <div class="nav__btns">
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="uil uil-apps"></i>
-                    </div>
-                    
-                </div>
-            </nav>
-
-        </header>
-
-
-
-
-        <main>
-            <h1>MAIN WIP</h1>
-            <h2>To-do</h2>
-            <ul>
-                <li>Add nav bar on top (include different things)</li>
-                <li>Add a footer bar including contact/hyperlinks</li>
-                <li>Animate/embed things from LinkedIn</li>
-                <li>Round corners with CSS</li>
-                <li> add more... MORE MORE MORE</li>
-            </ul>
-        
-        </main>
-        <footer>footer beep boop</footer>
-
-        <!--CSS-->
-        <script src="assets/js/main.js"></script>
-
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="profile">
+        <button class="dropdown-btn">Who am I?</button>
+        <div class="dropdown-content">
+            <p>Hello, I'm Max. I am a passionate developer...</p>
+        </div>
+        <button class="dropdown-btn">My Hobbies</button>
+        <div class="dropdown-content">
+            <p>I enjoy coding, music, and hiking...</p>
+        </div>
+        <button class="dropdown-btn">Projects</button>
+        <div class="dropdown-content">
+            <p>Here are some of my projects:...</p>
+        </div>
+        <button class="dropdown-btn">Resume</button>
+        <div class="dropdown-content">
+            <p>You can view my resume <a href="resume.pdf" target="_blank">here</a>.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
