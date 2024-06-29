@@ -43,22 +43,21 @@ main {
 }
 
 section {
-    margin: 2rem 0;
+    margin: 2rem auto;
     padding: 2rem;
-    background: #E2F0CB; /* Light pastel color for text background */
-    border-radius: 5px;
+    background: #E2F0CB; 
+    border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease; /* Add transition for zoom effect */
+    width: 80%; 
+    max-width: 800px;  
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-section:hover {
-    transform: scale(1.05); /* Zoom in effect */
-}
 
 footer {
     text-align: center;
     padding: 1rem 0;
-    background: #A3C9A8; /* Brighter pastel green */
+    background: #A3C9A8; 
     color: #333;
     position: fixed;
     width: 100%;
@@ -74,7 +73,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Bubbles */
 .bubbles {
     position: fixed;
     top: 0;
@@ -139,4 +137,22 @@ footer a:hover {
     100% {
         transform: translateY(-150vh);
     }
+}
+
+.section {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.section.outgoing {
+    opacity: 0;
+    transform: translateX(-100%);
 }

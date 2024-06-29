@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const targetId = this.getAttribute('data-target');
             const targetSection = document.getElementById(targetId);
-            
+
             sections.forEach(section => {
                 if (section.classList.contains('active')) {
                     section.classList.add('outgoing');
                     setTimeout(() => {
                         section.classList.remove('active', 'outgoing');
-                    }, 500); // Adjust duration to match CSS transition
+                    }, 500); 
                 }
             });
 
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 targetSection.classList.remove('incoming');
                 targetSection.classList.add('active');
-            }, 10); // Small delay to trigger transition
+            }, 10); 
         });
     });
 });
