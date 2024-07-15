@@ -1,18 +1,28 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: #D5E8D4; /* Calm greenish background */
+    background: #D5E8D4; 
     color: #333;
     overflow-x: hidden;
 }
 
 header {
-    background: #A3C9A8; /* Brighter pastel green */
+    background: #A3C9A8; 
     color: #333;
     padding: 1rem 0;
     text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
 }
 
 nav ul {
@@ -20,10 +30,12 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; 
+    margin: 0;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0.5rem; 
 }
 
 nav ul li a {
@@ -37,10 +49,10 @@ nav ul li a:hover {
 }
 
 main {
-    padding: 2rem;
+    flex: 1;
+    padding: 6rem 1rem 4rem; 
     position: relative;
     z-index: 1;
-    padding-bottom: 4rem; /* Ensure there's space for the fixed footer */
 }
 
 section {
@@ -49,7 +61,7 @@ section {
     background: #E2F0CB; 
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%; 
+    width: 100%; 
     max-width: 800px;  
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -57,11 +69,12 @@ section {
 .project-item {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; 
     margin-bottom: 2rem;
 }
 
 .project-content, .project-image {
-    flex: 1;
+    flex: 1 1 100%; 
     padding: 1rem;
 }
 
@@ -70,23 +83,17 @@ section {
     border-radius: 15px;
 }
 
-.project-item:nth-child(even) .project-content {
-    order: 2;
-}
+/* Stowed for later */
 
-.project-item:nth-child(even) .project-image {
-    order: 1;
-}
-
-footer {
+/* footer {
     text-align: center;
     padding: 1rem 0;
     background: #A3C9A8; 
     color: #333;
-    position: fixed;
     width: 100%;
+    position: fixed;
     bottom: 0;
-    z-index: 2; 
+    z-index: 2;
 }
 
 footer a {
@@ -96,7 +103,7 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
+} */
 
 .bubbles {
     position: fixed;
@@ -180,4 +187,25 @@ footer a:hover {
 .section.outgoing {
     opacity: 0;
     transform: translateX(-100%);
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+    nav ul {
+        justify-content: center;
+    }
+
+    .project-content, .project-image {
+        flex: 1;
+    }
+
+    section {
+        width: 80%;
+    }
+}
+
+@media (min-width: 900px) {
+    section {
+        width: 70%;
+    }
 }
