@@ -40,6 +40,7 @@ main {
     padding: 2rem;
     position: relative;
     z-index: 1;
+    padding-bottom: 4rem; /* Ensure there's space for the fixed footer */
 }
 
 section {
@@ -53,6 +54,29 @@ section {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.project-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.project-content, .project-image {
+    flex: 1;
+    padding: 1rem;
+}
+
+.project-image img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.project-item:nth-child(even) .project-content {
+    order: 2;
+}
+
+.project-item:nth-child(even) .project-image {
+    order: 1;
+}
 
 footer {
     text-align: center;
@@ -62,6 +86,7 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+    z-index: 2; 
 }
 
 footer a {
