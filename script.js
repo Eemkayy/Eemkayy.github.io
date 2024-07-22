@@ -1,27 +1,37 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
+document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll(".section");
+    const mainContainer = document.querySelector("main");
 
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('data-target');
-            const targetSection = document.getElementById(targetId);
+    function updateMainHeight() {
+        const activeSection = document.querySelector(".section.active");
+        if (activeSection) {
+            mainContainer.style.height = activeSection.offsetHeight + "px";
+        }
+    }
+    updateMainHeight();
+    document.querySelectorAll(".nav-link").forEach(navLink => {
+        navLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            const targetSectionId = this.getAttribute("data-target");
+            const targetSection = document.getElementById(targetSectionId);
+            const currentSection = document.querySelector(".section.active");
 
-            sections.forEach(section => {
-                if (section.classList.contains('active')) {
-                    section.classList.add('outgoing');
+            if (currentSection !== targetSection) {
+                currentSection.classList.add("outgoing");
+                currentSection.classList.remove("active");
+
+                setTimeout(() => {
+                    currentSection.classList.add("hidden");
+                    currentSection.classList.remove("outgoing");
+
+                    targetSection.classList.remove("hidden");
                     setTimeout(() => {
-                        section.classList.remove('active', 'outgoing');
-                    }, 500); 
-                }
-            });
-
-            targetSection.classList.add('incoming');
-            setTimeout(() => {
-                targetSection.classList.remove('incoming');
-                targetSection.classList.add('active');
-            }, 10); 
+                        targetSection.classList.add("active");
+                        updateMainHeight();
+                    }, 10); 
+                }, 500); 
+            }
         });
     });
+    window.addEventListener("resize", updateMainHeight);
 });
