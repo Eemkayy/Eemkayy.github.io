@@ -1,6 +1,28 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll(".section");
-    const mainContainer = document.querySelector("main");
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const welcomeText = document.getElementById('welcome-text');
+    const mainContainer = document.getElementById('main-container');
+
+    const message = "Welcome, curious fellow!";
+
+    function typeWriter(text, i, callback) {
+        if (i < text.length) {
+            welcomeText.textContent = text.substring(0, i + 1);
+            setTimeout(function() {
+                typeWriter(text, i + 1, callback);
+            }, 100); 
+        } else if (callback) {
+            setTimeout(callback, 3000); 
+        }
+    }
+    function showMainContent() {
+        welcomeScreen.style.opacity = '0';
+        setTimeout(() => {
+            document.body.classList.add('loaded');
+            welcomeScreen.style.display = 'none';
+        }, 1000); 
+    }
+    typeWriter(message, 0, showMainContent);
 
     function updateMainHeight() {
         const activeSection = document.querySelector(".section.active");
